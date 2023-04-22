@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="TextViewForm">
-        <Item name="android:layout_marginHorizontal">30dp</Item>
-        <Item name="android:layout_marginBottom">40dp</Item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_marginBottom">40dp</item>
     </style>
 
     <style name="EditTextForm">
-        <Item name="android:layout_width">match_parent</Item>
-       <Item name="android:layout_height"> wrap_content</Item>
-        <Item name="android:layout_marginHorizontal">30dp</Item>
-        <Item name="android:layout_marginBottom">40dp</Item>
-        <Item name="android:inputType">number</Item>
-       <Item name="android:maxLength">3</Item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_marginBottom">40dp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">3</item>
     </style>
 
     <style name="ButtonForm">
-        <Item name="android:layout_width">wrap_content</Item>
-        <Item name="android:layout_height">wrap_content</Item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">40dp</item>
-        <Item name="android:layout_gravity">center</Item>
-        <Item name="android:backgroundTint">@color/black</Item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:backgroundTint">@color/black</item>
     </style>
-
-
-
 </resources>
