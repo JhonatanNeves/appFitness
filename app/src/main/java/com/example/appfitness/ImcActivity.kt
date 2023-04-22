@@ -3,9 +3,9 @@ package com.example.appfitness
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class StartActivity : AppCompatActivity() {
+class ImcActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start)
+        setContentView(R.layout.activity_imc)
     }
 }
