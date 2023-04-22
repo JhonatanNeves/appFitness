@@ -1,5 +1,6 @@
 package com.example.appfitness
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         btnImc = findViewById(R.id.btn_imc)
 
         btnImc.setOnClickListener{
-
+            val i = Intent(this, ImcActivity::class.java)
+            startActivity(i)
         }
 
     }
