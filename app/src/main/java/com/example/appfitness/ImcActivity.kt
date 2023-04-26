@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class ImcActivity : AppCompatActivity() {
 
@@ -19,19 +20,18 @@ class ImcActivity : AppCompatActivity() {
 
         val btnSend: Button = findViewById(R.id.btn_imc_send)
         btnSend.setOnClickListener{
-
+            if (!validate()){
+                Toast.makeText(this, R.string.fields_message, Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
         }
     }
 
     private fun validate(): Boolean {
-        if (editWeight.text.toString().isNotEmpty()
+        return (editWeight.text.toString().isNotEmpty()
             && editHeight.text.toString().isNotEmpty()
             && !editWeight.text.toString().startsWith("0")
-            && !editHeight.text.toString().startsWith("0")) {
-            return true
-        } else {
-            return false
-        }
+            && !editHeight.text.toString().startsWith("0"))
     }
 
 }
