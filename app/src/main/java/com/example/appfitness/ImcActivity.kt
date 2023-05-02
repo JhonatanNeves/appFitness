@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.StringRes
 
 class ImcActivity : AppCompatActivity() {
 
@@ -28,16 +29,26 @@ class ImcActivity : AppCompatActivity() {
 
             val weight = editWeight.text.toString().toInt()
             val height = editHeight.text.toString().toInt()
+
             val result = calculateImc(weight, height)
             Log.d("Teste", "resultado: $result")
+
+            val imcResponseId = imcResponse(result)
+            Toast.makeText(this, imcResponseId, Toast.LENGTH_SHORT).show()
         }
     }
 
+    @StringRes // importante : retorna um inteiro/arquivo  de recurso
     private fun imcResponse(imc: Double): Int {
-        if (imc < 15.0) {
-            return R.string.imc_severely_low_weight
-        } else {
-            return R.string.normal
+        return when {
+            imc < 15.0 -> R.string.imc_severely_low_weight
+            imc < 16.0 -> R.string.imc_very_low_weight
+            imc < 18.5 -> R.string.imc_low_weight
+            imc < 25.0 -> R.string.normal
+            imc < 30.0 -> R.string.imc_high_weight
+            imc < 35.0 -> R.string.imc_so_high_weight
+            imc < 40.0 -> R.string.imc_severely_high_weight
+            else -> R.string.imc_extreme_weight
         }
     }
 
