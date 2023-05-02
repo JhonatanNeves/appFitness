@@ -37,7 +37,7 @@ class ImcActivity : AppCompatActivity() {
 
             val imcResponseId = imcResponse(result)
 
-            val dialog = AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
 
                 .setTitle(getString(R.string.imc_response, result))
                 .setMessage(imcResponseId)
