@@ -41,7 +41,9 @@ class ImcActivity : AppCompatActivity() {
 
                 .setTitle(getString(R.string.imc_response, result))
                 .setMessage(imcResponseId)
-                .setPositiveButton(android.R.string.ok) { dialog, which -> }
+                .setPositiveButton(android.R.string.ok) { dialog, which ->
+                    // aqui vai rodar depois do click
+                }
 
                 .create()
                 .show()
