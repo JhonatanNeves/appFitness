@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         // quantidade de celulas
         override fun getItemCount(): Int {
-            return 15
+            return 30
         }
 
     }
