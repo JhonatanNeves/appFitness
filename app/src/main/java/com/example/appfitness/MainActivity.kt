@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         }
 
-        // quantidade de celulas
         override fun getItemCount(): Int {
             return 30
         }
