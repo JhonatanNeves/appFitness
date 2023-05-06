@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 1,
-                drawId = R.drawable.icon_btn1,
+                drawId = R.drawable.icon_btn_imc,
                 texStringId = R.string.imc,
                 color = Color.YELLOW
             )
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 3,
-                drawId = R.drawable.icon_btn1,
+                drawId = R.drawable.icon_btn,
                 texStringId = R.string.app_name,
                 color = Color.DKGRAY
             )
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 4,
-                drawId = R.drawable.icon_btn1,
+                drawId = R.drawable.icon_btn,
                 texStringId = R.string.app_name,
                 color = Color.CYAN
             )
