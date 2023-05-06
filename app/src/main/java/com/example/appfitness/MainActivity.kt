@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -39,11 +40,27 @@ class MainActivity : AppCompatActivity() {
                 color = Color.GRAY
             )
         )
+        mainItems.add(
+            MainItem(
+                id = 3,
+                drawId = R.drawable.icon_btn,
+                texStringId = R.string.app_name,
+                color = Color.DKGRAY
+            )
+        )
+        mainItems.add(
+            MainItem(
+                id = 4,
+                drawId = R.drawable.icon_btn,
+                texStringId = R.string.app_name,
+                color = Color.CYAN
+            )
+        )
 
         val adapter = MainAdapter(mainItems)
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
-        rvMain.layoutManager = LinearLayoutManager(this)
+        rvMain.layoutManager = GridLayoutManager(this, 2)
 
 //        btnImc = findViewById(R.id.btn_imc)
 //
@@ -78,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         fun bind(item: MainItem) {
             val img: ImageView = itemView.findViewById(R.id.item_img_icon)
             val name: TextView = itemView.findViewById(R.id.item_txt_name)
-            val container: LinearLayout = itemView as LinearLayout
+            val container: LinearLayout = itemView.findViewById(R.id.item_container_imc)
 
             img.setImageResource(item.drawId)
             name.setText(item.texStringId)
