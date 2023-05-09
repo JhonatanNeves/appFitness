@@ -65,8 +65,8 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
 
-    override fun onClick() {
-        Log.i("Teste", "clicou!")
+    override fun onClick(id: Int) {
+        Log.i("Teste", "clicou! $id")
     }
 
     private inner class MainAdapter(
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                 name.setText(item.texStringId)
                 container.setBackgroundColor(item.color)
                 container.setOnClickListener {
-                    onItemClickListener.onClick()
+                    onItemClickListener.onClick(item.id)
                 }
             }
         }
