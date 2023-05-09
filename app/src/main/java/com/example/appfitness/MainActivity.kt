@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -14,7 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnItemClickListener {
 
     //    private lateinit var btnImc: LinearLayout
     private lateinit var rvMain: RecyclerView
@@ -57,21 +58,22 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        val adapter = MainAdapter(mainItems)
+        val adapter = MainAdapter(mainItems, this)
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
         rvMain.layoutManager = GridLayoutManager(this, 2)
-
-//        btnImc = findViewById(R.id.btn_imc)
-//
-//        btnImc.setOnClickListener{
-//            val i = Intent(this, ImcActivity::class.java)
-//            startActivity(i)
-//        }
     }
 
-    private inner class MainAdapter(private val mainItems: List<MainItem>) :
-        RecyclerView.Adapter<MainViewHolder>() {
+
+    override fun onClick() {
+        Log.i("Teste", "clicou!")
+    }
+
+    private inner class MainAdapter(
+        private val mainItems: List<MainItem>,
+        private val onItemClickListener: OnItemClickListener
+    ) :
+        RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         // layout XML (item)
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -89,18 +91,19 @@ class MainActivity : AppCompatActivity() {
             return mainItems.size
         }
 
-    }
+        private inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            fun bind(item: MainItem) {
+                val img: ImageView = itemView.findViewById(R.id.item_img_icon)
+                val name: TextView = itemView.findViewById(R.id.item_txt_name)
+                val container: LinearLayout = itemView.findViewById(R.id.item_container_imc)
 
-    private class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: MainItem) {
-            val img: ImageView = itemView.findViewById(R.id.item_img_icon)
-            val name: TextView = itemView.findViewById(R.id.item_txt_name)
-            val container: LinearLayout = itemView.findViewById(R.id.item_container_imc)
-
-            img.setImageResource(item.drawId)
-            name.setText(item.texStringId)
-            container.setBackgroundColor(item.color)
+                img.setImageResource(item.drawId)
+                name.setText(item.texStringId)
+                container.setBackgroundColor(item.color)
+                container.setOnClickListener {
+                    onItemClickListener.onClick()
+                }
+            }
         }
     }
-
 }
