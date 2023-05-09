@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             MainItem(
                 id = 1,
                 drawId = R.drawable.icon_btn_imc,
-                texStringId = R.string.imc,
+                texStringId = R.string.bmi,
                 color = Color.YELLOW
             )
         )
@@ -39,22 +39,6 @@ class MainActivity : AppCompatActivity() {
                 drawId = R.drawable.icon_btn1,
                 texStringId = R.string.tmb,
                 color = Color.GRAY
-            )
-        )
-        mainItems.add(
-            MainItem(
-                id = 3,
-                drawId = R.drawable.icon_btn,
-                texStringId = R.string.app_name,
-                color = Color.DKGRAY
-            )
-        )
-        mainItems.add(
-            MainItem(
-                id = 4,
-                drawId = R.drawable.icon_btn,
-                texStringId = R.string.app_name,
-                color = Color.CYAN
             )
         )
         //METODO IMPL VIA FUNCTIONS
