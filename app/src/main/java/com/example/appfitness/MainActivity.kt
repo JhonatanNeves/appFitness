@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity(), OnItemClickListener {
+class MainActivity : AppCompatActivity() {
 
     //    private lateinit var btnImc: LinearLayout
     private lateinit var rvMain: RecyclerView
@@ -57,40 +57,55 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                 color = Color.CYAN
             )
         )
+        //METODO IMPL VIA FUNCTIONS
+        val adapter = MainAdapter(mainItems) { id ->
+            when (id) {
+                1 -> {
+                    val intent = Intent(this@MainActivity, ImcActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    // abrir uma outra activity
+                }
+                3 -> {
+                    // abrir uma outra activity
+                }
+                4 -> {
+                    // abrir uma outra activity
+                }
+            }
+        }
 
-        val adapter = MainAdapter(mainItems, this)
+        //METODO IMPL VIA OBJETO ANONIMO
+//        val adapter = MainAdapter(mainItems, object : OnItemClickListener {
+//            override fun onClick(id: Int) {
+//                when (id) {
+//                    1 -> {
+//                        val intent = Intent(this@MainActivity, ImcActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//                    2 -> {
+        // abrir uma outra activity
+//                    }
+//                    3 -> {
+        // abrir uma outra activity
+//                    }
+//                    4 -> {
+        // abrir uma outra activity
+//                    }
+//                }
+//            }
+//        })
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
         rvMain.layoutManager = GridLayoutManager(this, 2)
     }
 
-
-    override fun onClick(id: Int) {
-        when(id) {
-            1 -> {
-                val intent = Intent(this, ImcActivity::class.java)
-                startActivity(intent)
-            }
-            2 -> {
-//                val intent = Intent(this, ImcActivity::class.java)
-//                startActivity(intent)
-            }
-            3 -> {
-//                val intent = Intent(this, ImcActivity::class.java)
-//                startActivity(intent)
-            }
-            4 -> {
-//                val intent = Intent(this, ImcActivity::class.java)
-//                startActivity(intent)
-            }
-        }
-    }
-
     private inner class MainAdapter(
         private val mainItems: List<MainItem>,
-        private val onItemClickListener: OnItemClickListener
-    ) :
-        RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+//        private val onItemClickListener: OnItemClickListener
+        private val onItemClickListener: (Int) -> Unit,
+    ) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         // layout XML (item)
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -118,7 +133,11 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                 name.setText(item.texStringId)
                 container.setBackgroundColor(item.color)
                 container.setOnClickListener {
-                    onItemClickListener.onClick(item.id)
+                    //aqui ele é uma ref. função
+                    onItemClickListener.invoke(item.id)
+
+                    // aqui ele é uma ref. interface
+                    // onItemClickListener.onClick(item.id)
                 }
             }
         }
