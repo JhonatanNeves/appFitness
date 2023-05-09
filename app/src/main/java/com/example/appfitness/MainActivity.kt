@@ -66,7 +66,24 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
 
     override fun onClick(id: Int) {
-        Log.i("Teste", "clicou! $id")
+        when(id) {
+            1 -> {
+                val intent = Intent(this, ImcActivity::class.java)
+                startActivity(intent)
+            }
+            2 -> {
+//                val intent = Intent(this, ImcActivity::class.java)
+//                startActivity(intent)
+            }
+            3 -> {
+//                val intent = Intent(this, ImcActivity::class.java)
+//                startActivity(intent)
+            }
+            4 -> {
+//                val intent = Intent(this, ImcActivity::class.java)
+//                startActivity(intent)
+            }
+        }
     }
 
     private inner class MainAdapter(
