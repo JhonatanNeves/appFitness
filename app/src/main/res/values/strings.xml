@@ -4,8 +4,7 @@
     <string name="tmb">TMB</string>
     <string name="weight">Weight (kg)</string>
     <string name="height">Height (cm)</string>
-    <string name="imc_desc">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o pesodo indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
-        acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC</string>
+    <string name="imc_desc">BMI is the acronym for Body Mass Index that serves to assess the weight of the individual in relation to his height and thus indicate if he is within the ideal weight, over or under the desired weight.\n\nFill in the weight and height fields to find out your BMI</string>
     <string name="calc">Calculate</string>
     <string name="fields_message">Os campos devem ser preenchidos e diferente de zero</string>
     <string name="imc_severely_low_weight">Severamente abaixo do peso</string>
