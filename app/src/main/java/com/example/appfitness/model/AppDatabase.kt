@@ -23,9 +23,9 @@ abstract class AppDatabase : RoomDatabase() {
                         "fitness_tracker"
                     ).build()
                 }
-
+                return INSTANCE as AppDatabase
             }else {
-                return INSTANCE
+                return INSTANCE as AppDatabase
             }
         }
     }
