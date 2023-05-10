@@ -9,14 +9,14 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase : RoomDatabase() {
     abstract fun calcDao(): CalcDao
 
-    companion object{
+    companion object {
 
-        private var INSTANCE: AppDatabase?= null
+        private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context) : AppDatabase{
+        fun getDatabase(context: Context): AppDatabase {
             if (INSTANCE == null) {
 
-                synchronized(this){
+                synchronized(this) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         AppDatabase::class.java,
@@ -24,7 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
                     ).build()
                 }
                 return INSTANCE as AppDatabase
-            }else {
+            } else {
                 return INSTANCE as AppDatabase
             }
         }
