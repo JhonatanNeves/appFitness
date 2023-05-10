@@ -46,6 +46,9 @@ class ImcActivity : AppCompatActivity() {
                 .setPositiveButton(android.R.string.ok) { dialog, which ->
                     // aqui vai rodar depois do click
                 }
+                .setNegativeButton(R.string.save){
+                        dialog, which ->
+                }
                 .create()
                 .show()
 
