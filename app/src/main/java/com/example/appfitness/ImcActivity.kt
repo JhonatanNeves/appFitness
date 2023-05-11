@@ -52,7 +52,13 @@ class ImcActivity : AppCompatActivity() {
                         val app = (application as App)
                         val dao = app.db.calcDao()
                         dao.insert(Calc(type = "imc", res = result))
+
+                        runOnUiThread {
+                            Toast.makeText(this@ImcActivity, R.string.calc_saved, Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }.start()
+
                 }
                 .create()
                 .show()
