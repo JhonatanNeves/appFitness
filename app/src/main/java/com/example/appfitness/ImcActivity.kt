@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import com.example.appfitness.model.Calc
 
 class ImcActivity : AppCompatActivity() {
 
@@ -47,7 +48,9 @@ class ImcActivity : AppCompatActivity() {
                     // aqui vai rodar depois do click
                 }
                 .setNegativeButton(R.string.save){ dialog, which ->
-
+                    val app = (application as App)
+                    val dao = app.db.calcDao()
+                    dao.insert(Calc(type = "imc", res = result))
                 }
                 .create()
                 .show()
