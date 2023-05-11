@@ -47,10 +47,12 @@ class ImcActivity : AppCompatActivity() {
                 .setPositiveButton(android.R.string.ok) { dialog, which ->
                     // aqui vai rodar depois do click
                 }
-                .setNegativeButton(R.string.save){ dialog, which ->
-                    val app = (application as App)
-                    val dao = app.db.calcDao()
-                    dao.insert(Calc(type = "imc", res = result))
+                .setNegativeButton(R.string.save) { dialog, which ->
+                    Thread {
+                        val app = (application as App)
+                        val dao = app.db.calcDao()
+                        dao.insert(Calc(type = "imc", res = result))
+                    }.start()
                 }
                 .create()
                 .show()
