@@ -56,6 +56,7 @@ class ImcActivity : AppCompatActivity() {
 
                         runOnUiThread {
                             val intent = Intent(this@ImcActivity, ListCalcActivity::class.java)
+                            intent.putExtra("type", "imc")
                             startActivity(intent)
 
                         }
