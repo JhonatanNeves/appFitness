@@ -14,7 +14,10 @@ class ListCalcActivity : AppCompatActivity() {
         Thread {
             val app = (application as App)
             val dao = app.db.calcDao()
+            val response = dao.getRegisterByType(type)
+
             runOnUiThread {
+
             }
         }.start()
     }
