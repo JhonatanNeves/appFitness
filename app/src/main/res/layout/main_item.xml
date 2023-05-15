@@ -29,7 +29,8 @@
             android:id="@+id/item_txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bmi" />
+            android:text="@string/bmi"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
