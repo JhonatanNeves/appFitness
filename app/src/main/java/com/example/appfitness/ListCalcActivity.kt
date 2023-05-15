@@ -22,9 +22,11 @@ class ListCalcActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_calc)
 
+        val result = mutableListOf<Calc>()
+        val adapter = ListCalcAdapter(result)
         rv = findViewById(R.id.rv_list)
         rv.layoutManager = LinearLayoutManager(this)
-
+        rv.adapter = adapter
 
         val type =
             intent?.extras?.getString("type") ?: throw IllegalStateException("type not found")
@@ -34,7 +36,8 @@ class ListCalcActivity : AppCompatActivity() {
             val response = dao.getRegisterByType(type)
 
             runOnUiThread {
-
+                result.addAll(response)
+                adapter.notifyDataSetChanged()
             }
         }.start()
     }
