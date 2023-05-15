@@ -11,6 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfitness.model.Calc
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListCalcActivity : AppCompatActivity() {
 
@@ -60,8 +62,13 @@ class ListCalcActivity : AppCompatActivity() {
 
         private inner class ListCalcViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             fun bind(item: Calc) {
+                val tv = itemView as TextView
 
-                }
+                val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale("pt", "BR"))
+                val data = sdf.format(item.createdDate)
+                val res = item.res
+
+                tv.text = getString(R.string.list_response, res, data)
             }
         }
     }
