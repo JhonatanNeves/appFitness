@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 id = 1,
                 drawId = R.drawable.icon_btn_imc,
                 texStringId = R.string.bmi,
-                color = Color.YELLOW
+                color = Color.TRANSPARENT
             )
         )
         mainItems.add(
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 id = 2,
                 drawId = R.drawable.icon_btn1,
                 texStringId = R.string.tmb,
-                color = Color.GRAY
+                color = Color.TRANSPARENT
             )
         )
         //METODO IMPL VIA FUNCTIONS
