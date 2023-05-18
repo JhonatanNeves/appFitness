@@ -20,8 +20,8 @@
     <string name="calc_saved">Registro salvo com sucesso</string>
     <string name="calc_removed">Registro removido com sucesso</string>
     <string name="search">Buscar</string>
-    <string name="tmb_desc">TMB é o cálculo para descobrir a quantidade calórica que o corpo necessita com base no seu estilo de vida</string>
-    <string name="age">Idade</string>
+    <string name="tmb_desc">BMR is the calculation to find out the amount of calories your body needs based on your lifestyle.</string>
+    <string name="age">Age</string>
     <string name="tmb_response">Tmb: %1$.2f</string>
     <string name="list_response">resultado: %1$.2f, data: %2$s</string>
     <string name="delete_message">Você realmente quer excluir o registro?</string>

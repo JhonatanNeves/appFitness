@@ -25,4 +25,9 @@
         <item name="android:backgroundTint">@color/bnt_imc</item>
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="AutoTextViewForm" parent="ButtonForm">
+
+    </style>
+
 </resources>
