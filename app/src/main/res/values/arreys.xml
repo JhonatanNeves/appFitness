@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tbm_lifestyle">
+        <item>Little or no exercise</item>
+        <item>1 to 3 days a week</item>
+        <item>3 to 5 days a week</item>
+        <item>6 to 7 days a week</item>
+    </string-array>
+
+</resources>
