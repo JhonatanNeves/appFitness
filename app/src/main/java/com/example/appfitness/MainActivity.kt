@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 color = Color.TRANSPARENT
             )
         )
-        //METODO IMPL VIA FUNCTIONS
+
         val adapter = MainAdapter(mainItems) { id ->
             when (id) {
                 1 -> {
@@ -52,35 +52,9 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, TmbActivity::class.java)
                     startActivity(intent)
                 }
-                3 -> {
-                    // abrir uma outra activity
-                }
-                4 -> {
-                    // abrir uma outra activity
-                }
             }
         }
 
-        //METODO IMPL VIA OBJETO ANONIMO
-//        val adapter = MainAdapter(mainItems, object : OnItemClickListener {
-//            override fun onClick(id: Int) {
-//                when (id) {
-//                    1 -> {
-//                        val intent = Intent(this@MainActivity, ImcActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//                    2 -> {
-        // abrir uma outra activity
-//                    }
-//                    3 -> {
-        // abrir uma outra activity
-//                    }
-//                    4 -> {
-        // abrir uma outra activity
-//                    }
-//                }
-//            }
-//        })
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
         rvMain.layoutManager = GridLayoutManager(this, 2)
@@ -88,17 +62,14 @@ class MainActivity : AppCompatActivity() {
 
     private inner class MainAdapter(
         private val mainItems: List<MainItem>,
-//        private val onItemClickListener: OnItemClickListener
         private val onItemClickListener: (Int) -> Unit,
     ) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
-        // layout XML (item)
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
             val view = layoutInflater.inflate(R.layout.main_item, parent, false)
             return MainViewHolder(view)
         }
 
-        // disparado toda vez que houver uma rolagem na tela e for necessario trocar de conteudo da celula
         override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
             val itemCurrent = mainItems[position]
             holder.bind(itemCurrent)
@@ -118,11 +89,7 @@ class MainActivity : AppCompatActivity() {
                 name.setText(item.texStringId)
                 container.setBackgroundColor(item.color)
                 container.setOnClickListener {
-                    //aqui ele é uma ref. função
                     onItemClickListener.invoke(item.id)
-
-                    // aqui ele é uma ref. interface
-                    // onItemClickListener.onClick(item.id)
                 }
             }
         }
