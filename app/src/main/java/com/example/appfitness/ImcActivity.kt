@@ -68,7 +68,6 @@ class ImcActivity : AppCompatActivity() {
             // esconder teclado
             val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-
         }
     }
 
