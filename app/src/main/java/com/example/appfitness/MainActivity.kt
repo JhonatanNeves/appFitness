@@ -4,15 +4,12 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -28,15 +25,16 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 1,
-                drawId = R.drawable.icon_btn_imc,
+                drawId = R.drawable.btn_bmi,
                 texStringId = R.string.bmi,
-                color = Color.TRANSPARENT
+                color = Color.TRANSPARENT,
+
             )
         )
         mainItems.add(
             MainItem(
                 id = 2,
-                drawId = R.drawable.icon_btn1,
+                drawId = R.drawable.btn_bmr,
                 texStringId = R.string.tmb,
                 color = Color.TRANSPARENT
             )
