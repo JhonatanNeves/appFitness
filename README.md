@@ -1,2 +1,17 @@
-# appFitness
-ongoing project
+# BMI/MBR
+Development of an application focused on the nutritional area, BMI/BMR Calculator is an application idea focused on my professional growth.
+
+# INFORMATION ABOUT THE APP
+The project consist of a hub of solutions ranging from calculations related to weight and body mass.
+
+- Find out your BMI
+- How many calories should consume with TMB
+
+
+# TECHNOLOGIES USED
+- SplashActivity
+- RecycleView
+- ViewBinding
+- WebView
+- Androidx
+- Room
