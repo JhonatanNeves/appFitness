@@ -9,29 +9,73 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         tools:context=".ImcActivity">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/white"
+                android:paddingTop="28dp"
+                android:src="@drawable/ic_back" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:paddingTop="19dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/header"/>
+
+            <ImageButton
+                android:id="@+id/search_image_button"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:paddingTop="40dp"
+                android:src="@drawable/menu" />
+
+
+        </LinearLayout>
+
+
         <TextView
             style="@style/TextViewForm"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="@string/imc_desc" />
+            android:text="@string/imc_desc"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/edit_imc_weight"
             style="@style/EditTextForm"
             android:hint="@string/weight"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/edit_imc_height"
             style="@style/EditTextForm"
-            android:textColorHint="@color/white"
-            android:hint="@string/height" />
+            android:hint="@string/height"
+            android:textColorHint="@color/white" />
 
         <Button
             android:id="@+id/btn_imc_send"
