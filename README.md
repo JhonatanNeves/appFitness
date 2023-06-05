@@ -18,16 +18,10 @@ The project consist of a hub of solutions ranging from calculations related to w
 
 <div aling="light">
 <img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/bc_1.png" width="300px">
+ <img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/img_2.png" width="300px">
  </div>
 
 <div aling="light">
- <img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/img_2.png" width="300px"> 
-</div>
-
-<div aling="light">
 <img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/img_3.png" width="300px">
-</div>
-
-<div aling="light">
-<img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/img_4.png" width="300px">
+ <img src="https://github.com/JhonatanNeves/appFitness/blob/master/app/src/main/res/drawable/img_4.png" width="300px">
 </div>
